@@ -1,7 +1,11 @@
 * {
     padding: 0;
     margin: 0;
+}
+
+body{
     background-color: black;
+    overflow: hidden;
 }
 
 .container {
@@ -10,6 +14,10 @@
     justify-content: center;
     width: 100%;
     height: 100vh;
+}
+svg {
+    position: relative;
+    will-change: transform;
 }
 
     /* Define initial stroke dash and offset */
@@ -35,4 +43,18 @@ path.animate-draw {
       100% {
         stroke: white;  /* Final stroke color */
       }
- }
+}
+
+.move-to-corner {
+    animation: moveToCorner 3s ease-out forwards;
+  }
+  @keyframes moveToCorner {
+    
+    to {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      width: 50px;
+      height: auto;
+    }
+  }
